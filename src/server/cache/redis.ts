@@ -1,8 +1,7 @@
 import { createClient, type RedisClientType } from "redis";
 
 const client: RedisClientType = createClient({
-  url: process.env.REDIS_URL!,
-  password: process.env.REDIS_PASSWORD!,
+  url: process.env.REDIS_URL!
 });
 
 async function connectRedis(): Promise<void> {
