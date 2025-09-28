@@ -1,0 +1,14 @@
+{
+  "name": "Pokemon TCG Gallery",
+  "short_name": "Pokemon TCG Gallery",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
