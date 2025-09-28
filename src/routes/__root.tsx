@@ -162,7 +162,7 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/site.webmanifest", color: "#ffffff" },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.png" },
     ],
   }),
   errorComponent: DefaultCatchBoundary,
