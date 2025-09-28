@@ -133,7 +133,7 @@ export const Route = createRootRoute({
     //             ^?
     return serverContext;
   },
-  // ssr: false,
+  ssr: false,
   loader: ({ context }) => {
     context?.fromFetch;
     //             ^?
@@ -171,6 +171,8 @@ export const Route = createRootRoute({
 
 const queryClient = new QueryClient();
 
+const enableDevtools = false;
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
@@ -180,18 +182,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </head>
         <body className="bg-background text-foreground min-h-screen">
           {children}
-          <TanStackDevtools
-            plugins={[
-              {
-                render: () => <TanStackRouterDevtoolsPanel />,
-                name: "Router",
-              },
-              {
-                render: () => <ReactQueryDevtoolsPanel />,
-                name: "Query",
-              },
-            ]}
-          />
+          {enableDevtools && (
+            <TanStackDevtools
+              plugins={[
+                {
+                  render: () => <TanStackRouterDevtoolsPanel />,
+                  name: "Router",
+                },
+                {
+                  render: () => <ReactQueryDevtoolsPanel />,
+                  name: "Query",
+                },
+              ]}
+            />
+          )}
           <Scripts />
         </body>
       </html>
